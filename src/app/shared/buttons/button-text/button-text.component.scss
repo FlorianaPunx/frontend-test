@@ -1,0 +1,46 @@
+:host {
+  -webkit-appearance: none;
+}
+
+.button {
+  max-width: 100%;
+  position: relative;
+  -webkit-appearance: none;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  background: transparent;
+  display: inline-flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0;
+  border: {
+    style: solid;
+    color: transparent;
+    width: 1px;
+    radius: 0;
+  };
+
+  &:active {
+    background: transparent;
+    color: red;
+    border: {
+      style: none;
+      color: transparent;
+      width: 1px;
+      radius: 0;
+    };
+  }
+
+  &:focus {
+    background: transparent;
+    color: red;
+    border: {
+      style: none;
+      color: transparent;
+      width: 1px;
+      radius: 0;
+    };
+  }
+
+}
