@@ -1,0 +1,6 @@
+<app-item [title]="title">
+  <app-button-text>{{'button'}}</app-button-text>
+</app-item>
+<div class="tree" style="margin-left: 20px;">
+  <app-tree-element *ngFor="let item of children" [title]="item.title" [children]="item.children"></app-tree-element>
+</div>

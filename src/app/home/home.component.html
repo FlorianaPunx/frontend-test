@@ -1,1 +1,6 @@
-<h1>Cobiro start page</h1>
+<div class="home-container">
+  <app-input></app-input>
+  <div class="home-container__itmes-placeholder">
+    <app-tree-element *ngFor="let item of itemsById" [title]="item.title" [children]="item.children"></app-tree-element>
+  </div>
+</div>
