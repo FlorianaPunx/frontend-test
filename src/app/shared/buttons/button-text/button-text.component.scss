@@ -1,46 +1,80 @@
+@import '../../../../styles/variables';
+
 :host {
   -webkit-appearance: none;
 }
 
 .button {
-  max-width: 100%;
   position: relative;
-  -webkit-appearance: none;
-  border: none;
-  font-size: 1em;
+  overflow: hidden;
+  transition: background-color 250ms ease, padding 250ms ease;
+  background: none;
+  max-width: 100%;
   cursor: pointer;
-  background: transparent;
+  -webkit-appearance: none;
   display: inline-flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
-  padding: 0;
   border: {
     style: solid;
     color: transparent;
     width: 1px;
-    radius: 0;
+    radius: $buttonBorderRadius;
   };
 
-  &:active {
-    background: transparent;
-    color: red;
-    border: {
-      style: none;
-      color: transparent;
-      width: 1px;
-      radius: 0;
-    };
+  &:disabled {
+    opacity: .5;
+    cursor: auto;
   }
 
-  &:focus {
-    background: transparent;
-    color: red;
-    border: {
-      style: none;
-      color: transparent;
-      width: 1px;
-      radius: 0;
-    };
+  &.color- {
+    &primary {
+      color: $colorTextAccent;
+      background-color: $colorPrimary;
+
+      &:not(:disabled) {
+        &:hover, &.focus {
+          background-color: $colorSecondary;
+        }
+      }
+    }
+
+    &transparent {
+      background-color: transparent;
+      color: $colorTextPrimary;
+
+      &.active {
+        color: red;
+      }
+
+      &:not(:disabled):not(.active) {
+        &:hover, &.focus {
+          background-color: transparent;
+        }
+      }
+
+      &.focus {
+        background-color: green;
+      }
+    }
   }
 
+  &.disable-hover-effect {
+    &:not(:disabled):not(.active) {
+      &:hover, &.focus {
+        background-color: $colorBackgroundSecondary;
+      }
+    }
+
+    &.focus {
+      background-color: pink;
+    }
+
+  }
+}
+
+button:focus {
+  outline: none;
+  outline-offset: 0;
+  background: transparent;
 }

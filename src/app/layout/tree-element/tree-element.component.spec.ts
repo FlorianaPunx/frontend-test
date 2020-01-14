@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TreeElementComponent } from './tree-element.component';
+import {SharedModule} from '../../shared/shared.module';
 
 describe('TreeElementComponent', () => {
   let component: TreeElementComponent;
@@ -8,7 +9,12 @@ describe('TreeElementComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TreeElementComponent ]
+      imports: [
+        SharedModule
+      ],
+      declarations: [
+        TreeElementComponent
+      ],
     })
     .compileComponents();
   }));

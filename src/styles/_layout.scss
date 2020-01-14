@@ -1,3 +1,15 @@
 body {
   font-family: 'Soleil', sans-serif;
 }
+
+html, body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #F4F9FC;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}

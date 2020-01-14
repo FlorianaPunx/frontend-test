@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SidebarComponent } from './sidebar.component';
+import {SharedModule} from '../../shared/shared.module';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
@@ -8,6 +9,9 @@ describe('SidebarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        SharedModule
+      ],
       declarations: [ SidebarComponent ]
     })
     .compileComponents();

@@ -2,6 +2,13 @@
         class="button"
         [disabled]="disabled"
         [type]="type"
-        (click)="onClick($event)">
+        [ngClass]="'color-' + color"
+        [tabIndex]="tabIndex"
+        [class.active]="active !== false"
+        [class.disable-hover-effect]="disableHoverEffect !== false"
+        [class.focus]="buttonFocus$ | async"
+        (click)="onClick($event)"
+        (focus)="onFocus()"
+        (blur)="onBlur()">
   <ng-content></ng-content>
 </button>

@@ -17,5 +17,12 @@
     display: flex;
     flex-direction: column;
     margin-top: 57px;
+
+    ::ng-deep {
+      button {
+        margin-top: 35px;
+      }
+    }
+
   }
 }
