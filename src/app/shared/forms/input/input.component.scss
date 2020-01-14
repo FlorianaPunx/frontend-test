@@ -1,5 +1,26 @@
 .input-wrapper {
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #FFFFFF;
+  margin-bottom: 20px;
+  border: 1px solid #E5E9ED;
+  border-radius: 5px;
+  padding: 0 20px;
+
+  &__input-box {
+    width: 100%;
+  }
+
+}
+
+:host(.focus) {
+  border: 1px solid blue;
+}
+
+:host ::ng-deep input {
+  border: none;
+  outline: none;
+  width: 100%;
 }

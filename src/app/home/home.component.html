@@ -1,6 +1,13 @@
 <div class="home-container">
-  <app-input></app-input>
+  <app-input icon="search">
+    <input appCobiroInputRef
+           type="text"
+           placeholder="Search"
+           [formControl]="filter">
+  </app-input>
   <div class="home-container__itmes-placeholder">
-    <app-tree-element *ngFor="let item of itemsById" [title]="item.title" [children]="item.children"></app-tree-element>
+    <app-tree-element *ngFor="let item of filteredInput$ | async"
+                      [title]="item.title" [children]="item.children">
+    </app-tree-element>
   </div>
 </div>

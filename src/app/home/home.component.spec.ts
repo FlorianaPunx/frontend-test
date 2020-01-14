@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {SharedModule} from '../shared/shared.module';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,7 +10,12 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      imports: [
+        HttpClientModule,
+        SharedModule
+      ],
+      declarations: [ HomeComponent ],
+      providers: [ HttpClient ]
     })
     .compileComponents();
   }));
